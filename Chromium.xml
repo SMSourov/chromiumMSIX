@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap uap3 uap10 desktop rescap">
+  <!--Package created by MSIX Packaging Tool version: 1.2022.1101.0-->
+  <Identity Name="Chromium" Publisher="CN=Test Certificate" Version="108.0.5359.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>Chromium</DisplayName>
+    <PublisherDisplayName>Chromium</PublisherDisplayName>
+    <Description>According to chromium.woolyss.com, these binaries are portable, up to date, sync, widevine, all-codecs, win64. The version is 108.0.5359.125</Description>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <uap10:PackageIntegrity>
+      <uap10:Content Enforcement="on" />
+    </uap10:PackageIntegrity>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.1" />
+  </Dependencies>
+  <Applications>
+    <Application Id="CHROME" Executable="chrome.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements BackgroundColor="transparent" DisplayName="Chromium" Square150x150Logo="Assets\CHROME-Square150x150Logo.png" Square44x44Logo="Assets\CHROME-Square44x44Logo.png" Description="Chromium Browser">
+        <uap:DefaultTile Wide310x150Logo="Assets\CHROME-Wide310x150Logo.png" Square310x310Logo="Assets\CHROME-Square310x310Logo.png" Square71x71Logo="Assets\CHROME-Square71x71Logo.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication" Executable="chrome.exe">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="chrome.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="htm">
+            <uap:SupportedFileTypes>
+              <uap:FileType>.avif</uap:FileType>
+              <uap:FileType>.htm</uap:FileType>
+              <uap:FileType>.html</uap:FileType>
+              <uap:FileType>.pdf</uap:FileType>
+              <uap:FileType>.shtml</uap:FileType>
+              <uap:FileType>.xht</uap:FileType>
+              <uap:FileType>.xhtml</uap:FileType>
+              <uap:FileType>.svg</uap:FileType>
+              <uap:FileType>.webp</uap:FileType>
+            </uap:SupportedFileTypes>
+            <!-- <uap:Logo>Assets\Document44x44.png</uap:Logo> -->
+            <!-- <uap2:SupportedVerbs>
+              <uap3:Verb Id="open" Parameters="-osint -url &quot;%1&quot;">open</uap3:Verb>
+            </uap2:SupportedVerbs> -->
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.protocol">
+          <uap3:Protocol Name="http">
+            <uap:DisplayName>http</uap:DisplayName>
+            <!-- <uap:Logo>Assets\Document44x44.png</uap:Logo> -->
+          </uap3:Protocol>
+        </uap3:Extension>
+        <uap3:Extension Category="windows.protocol">
+          <uap3:Protocol Name="https">
+            <uap:DisplayName>https</uap:DisplayName>
+            <!-- <uap:Logo>Assets\Document44x44.png</uap:Logo> -->
+          </uap3:Protocol>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
